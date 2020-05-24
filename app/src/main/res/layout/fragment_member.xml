@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentClass.MemberFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/relativelayoutMember"
+        android:visibility="invisible"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/linearlogo"
+        android:background="@drawable/cornercircle"
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="@color/whitecolor"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:text="@string/membership"
+                android:id="@+id/textview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:lottie_rawRes="@raw/membership"
+                android:layout_centerHorizontal="true"
+
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_below="@+id/textview"
+                app:lottie_loop="false"
+                app:lottie_autoPlay="true" />
+
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearlogo"
+        android:id="@+id/linear">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:textColor="#000000"
+            android:id="@+id/text"
+            android:text="Benifits :"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/linear1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/e2buddy"
+                android:id="@+id/text1"
+                android:text="@string/benifit1"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_check"
+                android:drawablePadding="7dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/e2buddy"
+                android:id="@+id/text2"
+                android:text="@string/benifit2"
+                android:layout_marginTop="15dp"
+                android:drawableLeft="@drawable/ic_check"
+                android:drawablePadding="7dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/e2buddy"
+                android:id="@+id/text3"
+                android:text="@string/benifit3"
+                android:drawableLeft="@drawable/ic_check"
+                android:drawablePadding="7dp"
+
+                android:layout_marginTop="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_check"
+                android:drawablePadding="7dp"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/e2buddy"
+                android:id="@+id/text4"
+                android:text="@string/benifit4"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/e2buddy"
+                android:id="@+id/text5"
+                android:text="@string/benifit5"
+                android:drawableLeft="@drawable/ic_check"
+                android:drawablePadding="7dp"
+                android:layout_marginTop="15dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/e2buddy"
+                android:id="@+id/text6"
+                android:text="@string/benifit6"
+                android:drawableLeft="@drawable/ic_check"
+                android:drawablePadding="7dp"
+                android:layout_marginTop="15dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/e2buddy"
+                android:id="@+id/text7"
+                android:text="@string/benifit7"
+                android:drawableLeft="@drawable/ic_check"
+                android:drawablePadding="7dp"
+                android:layout_marginTop="15dp"
+
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/btMember"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear"
+            android:background="@drawable/button_design"
+            android:layout_marginTop="56dp"
+            android:textColor="#000000"
+
+            android:text="@string/membership"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"/>
+
+
+
+    </RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:visibility="invisible"
+
+    android:id="@+id/relativelayoutPremium"
+
+    android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/linearlogo1"
+            android:background="@drawable/cornercircle"
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/relativelayout"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:textColor="@color/whitecolor"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:text="@string/premiummember"
+                    android:id="@+id/textview1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+
+
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/whitelogo"
+
+                    android:layout_centerHorizontal="true"
+
+                    />
+
+
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/linearlogo1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="@string/message"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                app:lottie_rawRes="@raw/premium"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                app:lottie_loop="false"
+                app:lottie_autoPlay="true" />
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:text="Your Wada Id"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tvWadaId"
+                android:textColor="@color/whitecolor"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:textSize="35dp"
+                android:text="10283"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:visibility="gone"
+            android:minWidth="50dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</FrameLayout>

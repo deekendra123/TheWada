@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    style="@style/CustomBottomSheetDialogTheme"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/background_dialog"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/otp_text"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:id="@+id/tvNumber"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"/>
+
+            <com.alimuzaffar.lib.pin.PinEntryEditText
+                android:background="@null"
+                android:id="@+id/etOtp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:cursorVisible="false"
+                android:layout_marginTop="15dp"
+                android:inputType="number"
+                android:maxLength="4"
+                android:textIsSelectable="false"
+                android:textSize="20dp"
+                android:visibility="visible"
+                app:pinLineColors="#3762cc" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/textview"
+                    android:text=""
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:layout_toEndOf="@+id/textview"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:id="@+id/tvResendOtp"
+                    android:visibility="gone"
+                    android:text=""
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="Verify"
+            android:id="@+id/btVerify"
+            android:background="@drawable/bgbutton"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+       />
+
+
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:visibility="gone"
+        android:minWidth="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

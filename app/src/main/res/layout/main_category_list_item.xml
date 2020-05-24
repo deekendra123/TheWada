@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/cardView"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="8dp">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="130dp"
+
+               android:id="@+id/imgCategory"
+               android:scaleType="fitXY"
+
+               android:layout_gravity="center"/>
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginBottom="5dp"
+               android:layout_alignParentBottom="true"
+
+               android:layout_gravity="center">
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="5dp"
+                   android:orientation="vertical">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Main Category"
+               android:textColor="#000000"
+               android:textSize="15dp"
+               android:layout_marginLeft="20dp"
+
+               android:id="@+id/tvMainCategory"
+               android:textStyle="bold"
+               />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="5dp"
+                   android:text="Location"
+                   android:gravity="center"
+                   android:textSize="13dp"
+                   android:id="@+id/tvDesc"
+                   android:layout_marginLeft="20sp"
+                   />
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentRight="true"
+                   android:gravity="center"
+                   android:layout_marginRight="8dp"
+                   android:orientation="vertical">
+
+                   <TextView
+                       android:id="@+id/tvDiscount"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="5dp"
+                       android:drawableLeft="@drawable/ic_discount"
+                       android:drawablePadding="5dp"
+                       android:textColor="@color/colorPrimary"
+                       android:textStyle="bold"
+                       android:gravity="center"
+                       android:text="40% Discount"
+                       android:textSize="13dp" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:drawableLeft="@drawable/ic_place_black_24dp"
+                       android:layout_marginTop="5dp"
+                       android:text="Raipur"
+                       android:drawablePadding="2dp"
+                       android:textSize="13dp"
+                       android:id="@+id/tvLoc"
+                       />
+
+               </LinearLayout>
+
+           </RelativeLayout>
+       </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

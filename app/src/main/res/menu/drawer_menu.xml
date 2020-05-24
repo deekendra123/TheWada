@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <group android:checkableBehavior="single">
+                <item
+                    android:title="Profile"
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_profile1"
+                    android:menuCategory="secondary"/>
+
+                <item
+                    android:title="About"
+                    android:id="@+id/about"
+                    android:icon="@drawable/ic_info"
+                    android:menuCategory="secondary"/>
+
+
+                <item
+                    android:title="Contact Us"
+                    android:id="@+id/contact"
+                    android:icon="@drawable/ic_mail"
+                    android:menuCategory="secondary"
+                    />
+
+                <item
+                    android:title="Help"
+                    android:id="@+id/joinus"
+                    android:icon="@drawable/ic_joinus"
+                    android:menuCategory="secondary"
+                    />
+            </group>
+
+            <group
+                android:checkableBehavior="single"
+                    android:id="@+id/item1">
+                <item
+                    android:title="Logout"
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_logout"
+                    android:menuCategory="secondary"
+                    />
+            </group>
+
+
+
+
+
+</menu>

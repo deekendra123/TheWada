@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityClass.PhoneVerificationActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlRegister"
+        android:background="@drawable/cornercircle"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+
+
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/whitelogo"
+
+                android:background="@drawable/circlebg"
+
+                />
+
+            <TextView
+                android:layout_gravity="right"
+                android:textColor="@color/whitecolor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginRight="20dp"
+                android:text="@string/registration"
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlRegister"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            android:layout_margin="10dp"
+
+            app:cardUseCompatPadding="true"
+            >
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ic_phone"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"/>
+
+                <View
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="1dp"
+                    android:layout_height="fill_parent"
+                    android:background="@color/icon_color" />
+
+                <EditText
+                    android:id="@+id/etNumber"
+                    android:hint="@string/et_number"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="20dp"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            android:layout_margin="10dp"
+            >
+
+            <Button
+                android:id="@+id/btRegistration"
+                android:text="Next"
+                android:textColor="@color/whitecolor"
+                android:background="@color/icon_color"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:visibility="gone"
+        android:minWidth="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

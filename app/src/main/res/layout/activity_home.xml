@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whitecolor"
+
+    tools:context=".ActivityClass.HomeActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <fragment
+            android:id="@+id/frame_container"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:defaultNavHost="true"
+
+            android:layout_above="@+id/layout1"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+
+            android:background="@color/whitecolor"
+            android:id="@+id/layout1"
+            android:orientation="horizontal">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            app:itemRippleColor="@color/colorPrimary"
+            app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+            app:itemTextAppearanceInactive="@style/BottomNavigationView"
+            app:itemTextColor="@drawable/item_color"
+            android:fitsSystemWindows="true"
+            android:background="@color/whitecolor"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_nav_menu"
+            android:theme="@style/Widget.BottomNavigationView">
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:background="@color/whitecolor"
+                android:id="@+id/layoutSubscription"
+                android:gravity="center"
+                android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="45dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btcircle1"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                android:layout_height="45dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_member"
+                    android:id="@+id/imgSubscription"/>
+
+            </RelativeLayout>
+
+            </RelativeLayout>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/nav_view1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                app:itemRippleColor="@color/colorPrimary"
+                app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+                app:itemTextAppearanceInactive="@style/BottomNavigationView"
+                app:itemTextColor="@drawable/item_color"
+                android:fitsSystemWindows="true"
+                android:background="@color/whitecolor"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/bottom_nav_menu1"
+                android:theme="@style/Widget.BottomNavigationView">
+
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            >
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/relativelayout">
+
+
+
+                <ImageView
+
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_round"
+                    android:id="@+id/imgHelp"
+                    android:layout_marginRight="7dp"
+                    android:layout_toStartOf="@+id/relativelayout1"
+
+                    />
+
+                <RelativeLayout
+
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+
+                    android:gravity="center"
+                    android:id="@+id/relativelayout1"
+                    >
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/ic_social_media"
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/imgNotification"
+                        android:layout_marginRight="10dp"
+/>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </RelativeLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/nav_header"
+        android:id="@+id/navigationView"
+        android:background="@color/whitecolor"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/shareandearn"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="90dp"
+                android:layout_above="@+id/line1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/line1"
+                android:background="@color/colorPrimary"
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:id="@+id/btRefer"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/whitecolor"
+                    android:text="Refer and Earn"/>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/animation_view"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:scaleType="centerCrop"
+                    app:lottie_rawRes="@raw/share"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_below="@+id/textview"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

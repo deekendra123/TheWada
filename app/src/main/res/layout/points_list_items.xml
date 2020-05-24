@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:id="@+id/cardView"
+        app:cardUseCompatPadding="true"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imgOffer"
+                android:layout_width="120dp"
+                android:scaleType="fitXY"
+
+                android:layout_height="120dp"/>
+
+        </LinearLayout>
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imgChecke"
+        android:layout_width="20dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:background="@drawable/ic_check"
+        android:layout_height="20dp"/>
+
+</LinearLayout>

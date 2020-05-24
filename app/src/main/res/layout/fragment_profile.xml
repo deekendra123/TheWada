@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentClass.ProfileFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/bgprofile">
+
+        <TextView
+            android:id="@+id/titleName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="The Wada"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_marginTop="40dp"
+            android:textStyle="bold"
+            android:textSize="22dp" />
+
+    </RelativeLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userIcon"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="94dp"
+        android:background="@drawable/ic_profile"
+        />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentStart="true"
+
+            android:layout_below="@+id/userIcon"
+
+
+            android:scrollbars="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:drawableLeft="@drawable/ic_profile1"
+            android:drawablePadding="15dp"
+            android:text="User Name"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+
+
+
+
+        <TextView
+            android:id="@+id/userNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="15dp"
+            android:text="9098283334"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:id="@+id/imageView"
+
+                android:layout_centerVertical="true"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_share"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/imageView"
+                android:orientation="vertical">
+            <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="15dp"
+            android:text="Invite and earn"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvRefer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="15dp"
+                    android:text="Share this code "
+                    android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/tvReferCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="15dp"
+                        android:layout_marginLeft="2dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="14dp" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:id="@+id/imgCopy"
+                        android:layout_marginLeft="3dp"
+                        android:layout_centerVertical="true"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_copy"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="35dp"
+                android:text="Invite"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="17dp"
+                android:textColor="@color/blackecolor"
+                android:background="@drawable/invite_bg"
+                android:id="@+id/tvInvite"/>
+
+        </RelativeLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:background="#000000"/>
+
+        <TextView
+            android:id="@+id/tvPoints"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:text="Current Points"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:id="@+id/tvCurrentPoints"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+
+            android:textColor="@color/whitecolor"
+            android:text=""
+            android:textSize="18dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:visibility="gone"
+            android:minWidth="50dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</FrameLayout>

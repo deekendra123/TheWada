@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">TheWada</string>
+    <string name="title_activity_home"></string>
+    <string name="title_home">Home</string>
+    <string name="title_category">Category</string>
+    <string name="title_member">Subscription</string>
+    <string name="title_details">About</string>
+    <string name="title_profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_fragment">Hello Home fragment</string>
+    <string name="category_fragment">Hello Category fragment</string>
+    <string name="member_fragment">Hello Member fragment</string>
+    <string name="details_fragment">Hello Details fragment</string>
+    <string name="profile_fragment">Hello Profile fragment</string>
+
+    <string name="number">Enter Number</string>
+    <string name="email"> Enter Email </string>
+    <string name="address">Enter Address</string>
+    <string name="Password">Enter Password</string>
+    <string name="login">Login</string>
+    <string name="registration">Register</string>
+    <string name="otp">otp</string>
+    <string name="submit">submit</string>
+    <string name="offerplane">Plane Name</string>
+    <string name="joinmember">Join AS Member</string>
+
+    <string name="aboutwada">The Welfare Association for Development and Advancement is a registered body. The medical and health care are an integrated and comprehensive tool for the environment. We give the most importance to all these subjects.\n\nPresently this organization is promoting Nursing Care Senior Citizen Care Physiotherapy Cancer Awareness Program and organizing camps.  Service of the disabled, service of old age, night duty in local hospitals, providing special service ambulance and oxygen cylinders on referral to patients outside the city, which is being provided by the specialized services institution through a specialist nurse doctor.\n\nWada Home Care Taker Service is a medical specialty that helps you and your family focus on the quality of life. We care about the people in our community who are helpless. By providing physical, emotional and spiritual comfort, Home Care Taker Service uses an interdisciplinary team approach to respond to the diversity of needs of you and your family and provide the best care possible. Wada Care Taker focuses on patients and the patients family. Promise Home Care Taker Service comes to you wherever you are and wherever you need us. We provide the best care to you and your family.\n\n8 hours services for Rs. 349 /- Care Taker\n\nfacility available in Raipur, Jagadalpur and Visakhapatnam Special facility of oxygencylinder, medical bed, ambulance available by the organization Physiotherapist service at home is provide. All All the care-takers working in the organization are Indian citizens and after police investigation of all these, they have been hired.\n\nIf you are a good writer sometimes, you can give us your articles. If your children have any special talent like painting, dancing and others, we will help to bring it among the people. If you are working somewhere or are a government employee and you know English or know Yoga, then you can become an English education and yoga guru and give education to our other registered members, for which you will get financial support as a gift. If you do or do not do any work and you want to travel abroad and you want to get money for traveling, then you can earn money by helping in advertising work with us. If you are aware of historical heritage and you want to get money for this, then you can earn money by closing our travel guide through our conservation. If you know English and other languages, you can also work with us to translate various languages for which you will be paid. If you are a nurse and you are not currently working anywhere\n\nAfter survey conducted in urban and rural areas by the institution, it was found that most of the people don’t take proper treatment due to sufficient money, now a special discount card has been issued for such people, by whom people can take care of their health. On the other hand, in the field of education, it is found that due to the increasing cost of books, parents are unable to provide education to the children or try to give better education to any one child in the family.\n\nIn order to provide encouragement in serious problems like health and education, our organization has used a special discount card, by which people can save their financial savings. The discount card will work not only on some major institutions but also in private hospitals, physiotherapy centers, pathology labs, grocery stores, shopping malls, printing presses, readymade stores, footwear, beauty parlors and saloons, tours and travel and other places. There will also be a special discount or exemption on travel expenses and fares for those traveling in India and abroad.\n</string>
+    <string name="message">Thank you for your membership to TheWada. Your membership is active now.</string>
+
+    <string name="membership">Become a Member</string>
+    <string name="redeam">Redeam</string>
+
+
+    <string name="premiummember">Congratulation!</string>
+
+    <string name="benifit1">Get Discount Card and its Benefits.</string>
+    <string name="benifit2">Discount Upto 40% of purchases from registered local vendors on grocery and Daily needs.</string>
+    <string name="benifit3">Cash Benefit For Health Care and Medical Facilities, Food, Travel and Others.</string>
+    <string name="benifit4">24x7 OPD Benefits and Discount on Medicines up to 10%</string>
+    <string name="benifit5">Health Insurance Benefits on Subscription.</string>
+    <string name="benifit6">200 INR Cashback on your referral joining.</string>
+    <string name="benifit7">Enjoy our services across India.</string>
+
+    <string name="et_name">Enter Name</string>
+    <string name="et_full_name">Enter Full Name</string>
+    <string name="et_email">Enter Email</string>
+    <string name="et_password">Enter Password</string>
+    <string name="et_confirm_password">Enter Confirm Password</string>
+    <string name="et_state">State</string>
+    <string name="et_city">City</string>
+    <string name="et_id">Adhar Card/Pencard No</string>
+    <string name="et_number">Enter Number</string>
+    <string name="et_addressline">Address Line</string>
+    <string name="et_father_name">Enter Father Name</string>
+    <string name="et_ref">Enter Referral Code</string>
+    <string name="et_address">Enter Address</string>
+    <string name="bt_register">Register</string>
+    <string name="bt_payment">Make Payment</string>
+    <string name="tv_resend_otp">Didn\'t get otp ?</string>
+    <string name="otp_text">Please Enter the OTP to Verify your Account</string>
+    <string name="otp_text1">A OTP has been sent to </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="confirm">Please Confirm before redeem your points</string>
+
+
+    <string name="share">Share &amp; Earn</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="about_card">After survey conducted by the organization in urban and rural areas, it was found that most of the people are suffering due to lack of money in their treatment. Now a special discount card has been used for all those people, taking advantage of it.  On the other hand, we can improve health. On the other hand, due to the increasing cost of books in education, the families of children can send children to school.  A child can not exist or do to try to bring better education.\n\n
+
+To provide encouragement in serious problems like health and education, our organization has used a special discount card. By which people can save their financial benefits. The discount card will not only work on some major institutions but also private hospitals, therapy centers  , Pathology Lab, Grocery Stores, Shopping Mall, Printing Press, Readymade Store, Footwear, Beauty Parlor and Saloon, Tour  Nd travels and other institutions will be valid expenditure in travel for those traveling in the country and abroad and will provide special discounts on fares.\n
+ </string>
+
+    <!--  <string name="travel_card">
+       You and your family can save money during your vacation in and around India. How? By using this card, in any registered hotels, shops, restaurant, place of entertainment, any activities… Mean one card and many discounts. \n
+       Discount cards are a great way to reach your target market without the need for significant advance marketing looks or integration of demanding hardware and software. Discount cards are provided with terms and condition. A great offer for the new customers.
+
+   </string>
+    -->
+    <string name="travel_card">Your family or your group can make huge savings during your vacation in and around India. How? Just order the Wada travel card and use it directly at many small and large reputed hotels, shops, restaurants, bars, sightseeing tours, treks, adventure activities, and transports, and you will get big discounts from all. This is the only Discount card in your place - One card, many discounts!</string>
+
+    <!--<string name="service_card">we run night clubs, beauty chains, health clubs, spas, and more in your city and across India. Our handpicked deals from select merchants will help you save loads of your hard earned money each time you would spend. Why Pay Full Price when you can claim your discounts with Privilege Card. \n\n
+    Killer offers/deals from most sought after restaurants, night clubs, health clubs, beauty chains, spas, health care chains, tattoo studios and much more in your city and across India. Handpicked specially for you. Our team of experts understands how crucial a discount program is for your business. Discount cards are a vehicle for companies to directly target customers seeking discounts.\n\n
+</string>-->
+
+    <string name="service_card">We are The Wada, We provide discount card that is much similar to loyalty card services. Our handpicked deals from select and verified merchants will help you save loads of your hard-earned money each time you would spend. Why Pay Full Price when you can claim your discounts with Privilege Card. Our partnered beauty chains, health clubs, hotels, restaurants, gyms spas, and more in your city and across India.\n\nWe give very attractive and killer offers/deals from most sought after restaurants, night clubs, health clubs, beauty chains, spas, health care chains, tattoo studios, and much more in your city and across India. Handpicked especially for you. Our team of experts understands how crucial a discount program is for your business. Discount cards are a vehicle for companies to directly target customers seeking discounts.
+</string>
+
+    <string name="product_card">Discount cards are an excellent way to reach your target market without the need for significant upfront marketing costs or integration of expensive hardware and software. Discounts are offered as per the discount card terms and conditions. They are an excellent way to provde benifte to new customers.
+\n\n</string>
+
+
+    <string name="forgot_text">We just need your registered Mobile number to sent uou password reset otp.</string>
+    <string name="forgot_password">Forgot Password?</string>
+
+    <!--  <string name="discount_card">Benefit of Insurance\n\nThe person taking the discount card the Oriental Insurance Company Limited through this, citizens can avail all kinds of facilities under the security policy. For example, if the insured person has no dependent children below 23 years of age at the time of accident, then the amount will be provided as per the allowable claim under this policy. Cardholder can avail this insurance against falling from the tree, snake bite and other accidents.The company will provide an amount of Rs 40000 if the insured person becomes disabled and admitted to the hospital due to accident or if the insured person dies, the nominee will get Rs.160000 Your own piggy bank\n\n"WADA" is a family. If there is any problem in the house of any member in this family, or happiness is there, then we want to share it among ourselves. For example, if any person at the house of any member of the WADA family has any illness or if there is wedding in the house of the person, then the amount of Rs100-100 should be collected from the members of WADA family and help the needy members. In order to keep an account of such amount collected from WADA family, the information will be provided on the website or SMS will be sent to the members.\n\nDiscount card\n\nOne Card  - Many Benefits\n\nHow long is the card valid?\n\nThe card is valid for 1 year from the date of issue. The card can be used at any time during its binding period but the card must be personally present each time the doorway as it is non-transferable card.\n\nHow much can you save with one card?\n\nYou can save a lot. If you use the card correctly, you can save thousands in one card only. It is not just a discount card, but it could be used in all food, shopping, tourism it gives a very good saving. It is a profitable card in everything.\n</string>
+-->
+    <string name="discount_card">Wada discount card is a card or document, often a plastic credit card or paper card, that entitles the holder to discounts on the prices of some products or services. Cards may be issued as part of a loyalty program, offering discounts to existing customers to ensure their continuing custom; they may be offered free of charge, offering a modest discount with the intention of persuading purchasers to patronize participating shops; or they may be sold to members, offering larger discounts—for example, the offers 50% discounts at many restaurants at a substantial annual cost. Cards may be offered by merchants or groups of merchants, by clubs or associations who negotiate on behalf of all members to obtain benefits, or by official organizations offering concessionary prices to qualifying groups.
+</string>
+
+</resources>
+

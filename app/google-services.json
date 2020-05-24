@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "972712561277",
+    "firebase_url": "https://thewada-226ef.firebaseio.com",
+    "project_id": "thewada-226ef",
+    "storage_bucket": "thewada-226ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972712561277:android:d149517a4e7c8399b13f14",
+        "android_client_info": {
+          "package_name": "wada.programmics.thewada"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972712561277-n4r6i9vupqj5i0otfisnp53f3k741tv2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "wada.programmics.thewada",
+            "certificate_hash": "cda7e1de9c2483ef579414bcffb88e65a8f443b3"
+          }
+        },
+        {
+          "client_id": "972712561277-h21q87qaee4mse0mldtrt7vtpdim65v2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN-oA5lETYJqgipP8IBMEbUFW6nLJfJPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972712561277-h21q87qaee4mse0mldtrt7vtpdim65v2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

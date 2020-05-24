@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentClass.AboutFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+
+        android:layout_below="@+id/cardView"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/searchView"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:layout_below="@+id/tvTitleName"
+            android:fillViewport="true">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="17dp"
+                android:textColor="@color/blackecolor"
+                android:layout_margin="10dp"
+                android:id="@+id/tvContent"
+                />
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

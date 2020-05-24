@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imgNotification"
+            android:background="@drawable/wadalogo"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:id="@+id/line1"
+            android:layout_toEndOf="@+id/imgNotification"
+            android:layout_toStartOf="@+id/tvDate"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="News Title"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:id="@+id/tvTitle"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textSize="13dp"
+                android:id="@+id/tvMsg"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9 April"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:textSize="13dp"
+            android:id="@+id/tvDate"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

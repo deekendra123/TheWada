@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/lay"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/cardView">
+
+            <ImageButton
+                android:id="@+id/fullscreen_dialog_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                app:srcCompat="@drawable/ic_clear_black_24dp"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:id="@+id/tvCategory"
+
+                android:layout_toEndOf="@+id/fullscreen_dialog_close"
+                android:text="" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/cardView"
+
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+
+        android:id="@+id/imgCategory"/>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/phoneLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                app:backgroundTint="@color/colorPrimary"
+                android:layout_marginTop="170dp"
+                android:visibility="visible"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_phone1" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/webLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="75dp"
+                app:backgroundTint="@color/colorPrimary"
+                android:visibility="invisible"
+                android:layout_toLeftOf="@+id/phoneLink"
+                android:layout_marginTop="170dp"
+                android:src="@drawable/ic_web" />
+
+
+
+
+        <ScrollView
+            android:id="@+id/SCROLLER_ID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:layout_marginTop="5dp"
+            android:layout_above="@+id/button"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/phoneLink"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:textColor="@color/blackecolor"
+            android:layout_margin="5dp"
+            android:id="@+id/tvEntityName"
+            android:textStyle="bold"
+
+            />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+
+                android:textColor="@color/blackecolor"
+                android:textSize="17dp"
+
+                />
+
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:id="@+id/tvAddress"
+                android:layout_marginRight="5dp"
+            android:layout_marginBottom="11dp"
+                android:layout_marginLeft="5dp"
+
+
+            />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Images"
+                    android:textStyle="bold"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tvImg"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/blackecolor"
+                    android:visibility="gone"
+
+                    android:textSize="17dp"
+
+                    />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewEntity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp" />
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:textColor="@color/blackecolor"
+
+                android:textSize="17dp"
+
+                />
+
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:id="@+id/tvDesc"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+            android:layout_marginBottom="11dp"
+
+            />
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/button"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:text="Get Discount Benifits"
+            android:textColor="@color/whitecolor"/>
+
+
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:visibility="gone"
+        android:minWidth="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
