@@ -23,14 +23,13 @@ public class BannerPagerAdapter extends PagerAdapter {
 
 
     private ArrayList<BannerData> imageModelArrayList;
-    private LayoutInflater inflater;
     private Context context;
 
 
     public BannerPagerAdapter(Context context, ArrayList<BannerData> imageModelArrayList) {
         this.context = context;
         this.imageModelArrayList = imageModelArrayList;
-        inflater = LayoutInflater.from(context);
+
     }
 
     @Override
@@ -45,7 +44,7 @@ public class BannerPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup view, int position) {
-        View imageLayout = inflater.inflate(R.layout.banner_image_slider, view, false);
+        View imageLayout = LayoutInflater.from(context).inflate(R.layout.banner_image_slider, view, false);
 
         assert imageLayout != null;
         final ImageView imageView = (ImageView) imageLayout

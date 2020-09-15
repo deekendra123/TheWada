@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,9 +42,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import wada.programmics.thewada.ActivityClass.MainCategoryActivity;
 import wada.programmics.thewada.AdapterClass.EntityImageAdapter;
 
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.ObjectClass.EntityImages;
 
 import wada.programmics.thewada.ObjectClass.User;
@@ -51,12 +55,13 @@ import wada.programmics.thewada.R;
 
 public class CategoryDialogFragment extends DialogFragment {
     private Callback callback;
-    private TextView tvCategory, tvDesc,tvEntityName,tvAddress,tvImg;
-    private String categoryName, categoryDesc, categoryImageUrl, token;
+    private TextView tvCategory, tvDesc,tvEntityName,tvAddress,tvImg,tvadd,tvDescription;
+    private String categoryName, categoryDesc, categoryImageUrl, token, discount;
     private ImageView imageCategory;
     private int categoryId;
     private FloatingActionButton phoneLink,webLink;
     private ProgressBar progressBar;
+    private Button button;
 
     private RecyclerView recyclerViewEntity;
     public static CategoryDialogFragment newInstance() {
@@ -85,10 +90,14 @@ public class CategoryDialogFragment extends DialogFragment {
         tvAddress = view.findViewById(R.id.tvAddress);
         phoneLink = view.findViewById(R.id.phoneLink);
         webLink = view.findViewById(R.id.webLink);
+        button = view.findViewById(R.id.button);
+        tvadd = view.findViewById(R.id.tvadd);
         recyclerViewEntity = view.findViewById(R.id.recyclerViewEntity);
         tvImg =view.findViewById(R.id.tvImg);
+        tvDescription = view.findViewById(R.id.tvDescription);
         progressBar = view.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
+
 
         User user = SessionManager.getInstance(getActivity()).getUser();
 
@@ -97,13 +106,39 @@ public class CategoryDialogFragment extends DialogFragment {
         Bundle bundle = getArguments();
         categoryId = bundle.getInt("categoryId");
         categoryImageUrl = bundle.getString("categoryImg");
+        discount = bundle.getString("discount");
 
         Glide.with(getActivity())
                 .load(categoryImageUrl)
                 .into(imageCategory);
 
+        CheckInternet checkInternet = new CheckInternet(getActivity());
 
-        getCategoryDetails(categoryId);
+        if (discount.equals("null")){
+            button.setText("Get 0% Discount benefits");
+        }
+        else {
+            button.setText("Get "+ discount+"% Discount benefits");
+        }
+
+        if (checkInternet.isOnline()==true){
+            getCategoryDetails(categoryId);
+        }
+        else {
+
+            new AlertDialog.Builder(getActivity())
+                    .setTitle("Alert")
+                    .setCancelable(false)
+                    .setMessage("No Network. Please check your internet connection")
+                    .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            getCategoryDetails(categoryId);
+                        }
+                    }).create().show();
+
+        }
+
+
 
         closeDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -201,12 +236,20 @@ public class CategoryDialogFragment extends DialogFragment {
 
                                 tvCategory.setText(title);
                                 tvEntityName.setText(title);
-                                tvAddress.setText(""+address);
 
+                                if (address.equals("null")){
+
+                                    tvAddress.setVisibility(View.GONE);
+                                    tvadd.setVisibility(View.GONE);
+                                }
+                                else {
+                                    tvAddress.setVisibility(View.VISIBLE);
+                                    tvadd.setVisibility(View.VISIBLE);
+                                    tvAddress.setText("" + address);
+                                }
+
+                                tvDescription.setVisibility(View.VISIBLE);
                                 tvDesc.setText(long_des);
-
-
-
                                 progressBar.setVisibility(View.GONE);
 
 

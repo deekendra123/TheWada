@@ -34,7 +34,6 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
         this.list = list;
     }
 
-
     @NonNull
     @Override
     public MainCategoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -51,16 +50,29 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 
         holder.imageView.setImageResource(mainCategoryData.getImageUrl());
         holder.tvMainCategory.setText(mainCategoryData.getCategoryName());
-        holder.tvDesc.setText(mainCategoryData.getAddress());
         holder.tvLoc.setText(mainCategoryData.getLocation());
-        holder.tvDiscount.setText(mainCategoryData.getDiscount()+ "% Discount");
+
+        if (mainCategoryData.getAddress().equals("null")){
+            holder.tvDesc.setVisibility(View.INVISIBLE);
+
+        }
+        else {
+            holder.tvDesc.setText(mainCategoryData.getAddress());
+
+        }
+
+        if (!mainCategoryData.getDiscount().equals("null")){
+            holder.tvDiscount.setText(mainCategoryData.getDiscount()+ "% Discount");
+        }
+        else {
+            holder.tvDiscount.setText("0% Discount");
+        }
 
         final String imageurl = AppConfig.BASE_IMAGE_URL+ mainCategoryData.getImage_url();
 
         Glide.with(mCtx)
                 .load(imageurl)
                 .into(holder.imageView);
-
 
         holder.itemView.setClickable(false);
         holder.imageView.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +83,7 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
                 Bundle bundle = new Bundle();
                 bundle.putInt("categoryId", mainCategoryData.getId());
                 bundle.putString("categoryImg", imageurl);
+                bundle.putString("discount",mainCategoryData.getDiscount());
                 dialog.setArguments(bundle);
                 dialog.show(fm,"tag");
             }

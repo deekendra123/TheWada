@@ -21,7 +21,6 @@ public class NotificationReceiver extends BroadcastReceiver {
         if (android.os.Build.VERSION. SDK_INT >= android.os.Build.VERSION_CODES. O ) {
             int importance = NotificationManager. IMPORTANCE_HIGH ;
             NotificationChannel notificationChannel = new NotificationChannel( NOTIFICATION_CHANNEL_ID , "NOTIFICATION_CHANNEL_NAME" , importance) ;
-
             assert notificationManager != null;
             notificationManager.createNotificationChannel(notificationChannel) ;
         }

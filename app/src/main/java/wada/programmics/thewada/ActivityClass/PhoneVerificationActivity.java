@@ -1,8 +1,10 @@
 package wada.programmics.thewada.ActivityClass;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
@@ -30,6 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.DialogFragment.OtpVerificationBottomSheet;
 import wada.programmics.thewada.R;
 
@@ -100,7 +103,27 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                 }
                 else {
 
-                    userRegistration();
+                    CheckInternet checkInternet = new CheckInternet(getApplicationContext());
+
+                    if (checkInternet.isOnline()==true){
+                        userRegistration();
+                    }
+                    else {
+
+                        new AlertDialog.Builder(PhoneVerificationActivity.this)
+                                .setTitle("Alert")
+                                .setCancelable(false)
+                                .setMessage("No Network. Please check your internet connection")
+                                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        userRegistration();
+                                    }
+                                }).create().show();
+
+                    }
+
+
+
                 }
             }
         });
@@ -166,7 +189,6 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressBar.setVisibility(View.GONE);
-//                        Toast.makeText(PhoneVerificationActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
                     }
                 }){
 

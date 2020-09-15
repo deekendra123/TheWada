@@ -1,10 +1,12 @@
 package wada.programmics.thewada.FragmentClass;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -51,6 +53,7 @@ import wada.programmics.thewada.AdapterClass.BannerPagerAdapter;
 import wada.programmics.thewada.AdapterClass.HomeCategoryAdapter;
 import wada.programmics.thewada.AdapterClass.ServiceCardAdapter;
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.DialogFragment.ServicesDialogFragment;
 import wada.programmics.thewada.ObjectClass.BannerData;
 import wada.programmics.thewada.ObjectClass.MainCategoryData;
@@ -116,7 +119,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        final View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         servicerecyclerView = view.findViewById(R.id.servicecardlist);
         linearLayoutServices = view.findViewById(R.id.linearLayoutServices);
@@ -132,7 +135,6 @@ public class HomeFragment extends Fragment {
         progressBar.setVisibility(View.VISIBLE);
 
 
-        loadBanner(view);
 
         User user = SessionManager.getInstance(getContext()).getUser();
         email = user.getEmail();
@@ -142,15 +144,34 @@ public class HomeFragment extends Fragment {
         ref_code = user.getRef_code();
         token = user.getToken();
 
+        CheckInternet checkInternet = new CheckInternet(getActivity());
 
-        loadServiceImages();
+        if (checkInternet.isOnline()==true){
+            loadBanner(view);
 
-        onClickButtons();
-        loadHomeCategory(view);
-        loadServiceBanner(view);
+            loadServiceImages();
 
+            onClickButtons();
+            loadHomeCategory(view);
+            loadServiceBanner(view);        }
+        else {
 
+            new AlertDialog.Builder(getActivity())
+                    .setTitle("Alert")
+                    .setCancelable(false)
+                    .setMessage("No Network. Please check your internet connection")
+                    .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            loadBanner(view);
 
+                            loadServiceImages();
+
+                            onClickButtons();
+                            loadHomeCategory(view);
+                            loadServiceBanner(view);                        }
+                    }).create().show();
+
+        }
 
         return view;
     }
@@ -174,9 +195,7 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
 
-
                         try {
-
                             JSONObject obj = new JSONObject(response);
 
                             if (obj.getString("success").equals("true")){

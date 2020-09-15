@@ -1,5 +1,6 @@
 package wada.programmics.thewada.ActivityClass;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
@@ -8,6 +9,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -37,6 +39,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.ObjectClass.User;
 import wada.programmics.thewada.Preference.SessionManager;
 import wada.programmics.thewada.PushNotification.NotificationReceiver;
@@ -140,7 +143,25 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
 
                 else {
-                    userRegistration();
+
+                    CheckInternet checkInternet = new CheckInternet(getApplicationContext());
+
+                    if (checkInternet.isOnline()==true){
+                        userRegistration();
+                    }
+                    else {
+
+                        new AlertDialog.Builder(RegistrationActivity.this)
+                                .setTitle("Alert")
+                                .setCancelable(false)
+                                .setMessage("No Network. Please check your internet connection")
+                                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        userRegistration();
+                                    }
+                                }).create().show();
+
+                    }
                 }
             }
         });

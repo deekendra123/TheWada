@@ -1,5 +1,6 @@
 package wada.programmics.thewada.ActivityClass;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
@@ -43,6 +45,7 @@ import java.util.Map;
 
 import wada.programmics.thewada.AdapterClass.MainCategoryAdapter;
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.ObjectClass.MainCategoryData;
 import wada.programmics.thewada.ObjectClass.User;
 import wada.programmics.thewada.Preference.SessionManager;
@@ -82,7 +85,25 @@ public class MainCategoryActivity extends AppCompatActivity {
         User user = SessionManager.getInstance(MainCategoryActivity.this).getUser();
         token = user.getToken();
 
-        getCities();
+        CheckInternet checkInternet = new CheckInternet(getApplicationContext());
+
+        if (checkInternet.isOnline()==true){
+            getCities();
+        }
+        else {
+
+            new AlertDialog.Builder(MainCategoryActivity.this)
+                    .setTitle("Alert")
+                    .setCancelable(false)
+                    .setMessage("No Network. Please check your internet connection")
+                    .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            getCities();
+                        }
+                    }).create().show();
+
+        }
+
 
         SharedPreferences sharedPreferences = getSharedPreferences("category", MODE_PRIVATE);
         cat_id = sharedPreferences.getInt("category_id",0);

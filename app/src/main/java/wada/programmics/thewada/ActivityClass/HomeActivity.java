@@ -37,12 +37,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 
-import wada.programmics.thewada.BuildConfig;
 import wada.programmics.thewada.DialogFragment.FeedbackFullScreenDialog;
-import wada.programmics.thewada.DialogFragment.NotificationDialogFragment;
-import wada.programmics.thewada.DialogFragment.ServicesDialogFragment;
 import wada.programmics.thewada.FragmentClass.CategoryFragment;
 
 import wada.programmics.thewada.FragmentClass.DetailsFragment;
@@ -52,7 +48,7 @@ import wada.programmics.thewada.FragmentClass.ProfileFragment;
 import wada.programmics.thewada.ObjectClass.User;
 import wada.programmics.thewada.Preference.SessionManager;
 import wada.programmics.thewada.R;
-import wada.programmics.thewada.SqLiteDatabase.DBHelper;
+
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -271,9 +267,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         final User user = SessionManager.getInstance(this).getUser();
         email = user.getEmail();
-           tvprofile.setText(""+user.getUsername());
+        tvprofile.setText(""+user.getUsername());
 
-           Log.e("userId", String.valueOf(user.getId())+ "   "+user.getToken()+ "  " +user.getUsername()+ "   "+  user.getRef_code()+ "  "+user.getNumber());
+        Log.e("userId", String.valueOf(user.getId())+ "   "+user.getToken()+ "  " +user.getUsername()+ "   "+  user.getRef_code()+ "  "+user.getNumber());
 
         notificationLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -285,7 +281,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 editor.apply();
 
                 Intent intent = new Intent(HomeActivity.this, NotificationActivity.class);
-               startActivity(intent);
+                startActivity(intent);
 
             }
         });
@@ -331,8 +327,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.contact:
 
-            Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                    "mailto","info@thewada.com", null));
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto","info@thewada.com", null));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Body");
                 startActivity(Intent.createChooser(emailIntent, "Send email..."));

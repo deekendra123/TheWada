@@ -1,9 +1,10 @@
 package wada.programmics.thewada.ActivityClass;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +16,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.Map;
 
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.ObjectClass.User;
 import wada.programmics.thewada.Preference.SessionManager;
 import wada.programmics.thewada.R;
@@ -50,7 +51,6 @@ public class SubscriptionFormActivity extends AppCompatActivity implements Payme
     private int userId;
     private CheckBox checkBox;
     private ProgressBar progressBar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,16 +68,27 @@ public class SubscriptionFormActivity extends AppCompatActivity implements Payme
 
         progressBar = findViewById(R.id.progressBar);
 
-
-
         User user = SessionManager.getInstance(SubscriptionFormActivity.this).getUser();
         phone = user.getNumber();
         userId = user.getId();
         token = user.getToken();
 
+        CheckInternet checkInternet = new CheckInternet(getApplicationContext());
 
-        getState();
-
+        if (checkInternet.isOnline()==true){
+            getState();
+        }
+        else {
+            new AlertDialog.Builder(SubscriptionFormActivity.this)
+                    .setTitle("Alert")
+                    .setCancelable(false)
+                    .setMessage("No Network. Please check your internet connection")
+                    .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            getState();
+                        }
+                    }).create().show();
+        }
 
 
 
@@ -114,8 +125,24 @@ public class SubscriptionFormActivity extends AppCompatActivity implements Payme
 
                 else {
 
-                    insertMemberData();
+                    CheckInternet checkInternet = new CheckInternet(getApplicationContext());
 
+                    if (checkInternet.isOnline()==true){
+                        insertMemberData();
+                    }
+                    else {
+
+                        new AlertDialog.Builder(SubscriptionFormActivity.this)
+                                .setTitle("Alert")
+                                .setCancelable(false)
+                                .setMessage("No Network. Please check your internet connection")
+                                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        insertMemberData();
+                                    }
+                                }).create().show();
+
+                    }
                 }
 
             }

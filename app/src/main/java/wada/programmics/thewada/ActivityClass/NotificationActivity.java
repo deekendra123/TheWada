@@ -62,8 +62,6 @@ public class NotificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
-
                 if (data.equals("yes")){
 
                     SharedPreferences sharedPreferences = getSharedPreferences("backstatus",MODE_PRIVATE);

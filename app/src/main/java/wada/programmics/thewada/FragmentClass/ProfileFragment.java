@@ -4,10 +4,13 @@ package wada.programmics.thewada.FragmentClass;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,6 +43,7 @@ import java.util.Map;
 import wada.programmics.thewada.AdapterClass.PointSlabsAdapter;
 
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.ObjectClass.PointsData;
 import wada.programmics.thewada.ObjectClass.User;
 import wada.programmics.thewada.Preference.SessionManager;
@@ -118,7 +122,6 @@ public class ProfileFragment extends Fragment {
         token = user.getToken();
         referCode = user.getRef_code();
 
-
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
         recyclerViewPoints.setLayoutManager(layoutManager);
         list = new ArrayList<>();
@@ -127,7 +130,31 @@ public class ProfileFragment extends Fragment {
         userNumber.setText(phone);
         tvReferCode.setText(""+referCode);
 
-        getPoints(userId,token);
+        try {
+
+            CheckInternet checkInternet = new CheckInternet(getActivity());
+
+            if (checkInternet.isOnline()==true){
+                getPoints(userId,token);
+            }
+            else {
+
+                new AlertDialog.Builder(getActivity())
+                        .setTitle("Alert")
+                        .setCancelable(false)
+                        .setMessage("No Network. Please check your internet connection")
+                        .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                getPoints(userId,token);
+                            }
+                        }).create().show();
+
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
 
         tvInvite.setOnClickListener(new View.OnClickListener() {
@@ -204,7 +231,7 @@ public class ProfileFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 }){

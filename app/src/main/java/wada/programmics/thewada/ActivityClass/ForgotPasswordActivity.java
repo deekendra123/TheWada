@@ -1,9 +1,12 @@
 package wada.programmics.thewada.ActivityClass;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.R;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
@@ -72,7 +76,26 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
                 else {
 
-                    userForgetPassword(userid);
+                    CheckInternet checkInternet = new CheckInternet(getApplicationContext());
+
+                    if (checkInternet.isOnline()==true){
+                        userForgetPassword(userid);
+                    }
+                    else {
+
+                        new AlertDialog.Builder(ForgotPasswordActivity.this)
+                                .setTitle("Alert")
+                                .setCancelable(false)
+                                .setMessage("No Network. Please check your internet connection")
+                                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        userForgetPassword(userid);
+                                    }
+                                }).create().show();
+
+                    }
+
+
                 }
             }
         });

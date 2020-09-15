@@ -1,9 +1,11 @@
 package wada.programmics.thewada.FragmentClass;
 
 
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +37,7 @@ import java.util.List;
 import wada.programmics.thewada.AdapterClass.CategoryAdapter;
 
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.ObjectClass.MainCategoryData;
 import wada.programmics.thewada.R;
 
@@ -95,7 +98,24 @@ public class CategoryFragment extends Fragment {
 
         list = new ArrayList<>();
 
-        loadCategory();
+        CheckInternet checkInternet = new CheckInternet(getActivity());
+
+        if (checkInternet.isOnline()==true){
+            loadCategory();
+        }
+        else {
+
+            new AlertDialog.Builder(getActivity())
+                    .setTitle("Alert")
+                    .setCancelable(false)
+                    .setMessage("No Network. Please check your internet connection")
+                    .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            loadCategory();
+                        }
+                    }).create().show();
+
+        }
 
 
         return view;
@@ -149,7 +169,7 @@ public class CategoryFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                     //   Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 });

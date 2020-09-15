@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
 import com.android.volley.AuthFailureError;
@@ -32,7 +33,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import wada.programmics.thewada.ActivityClass.SubscriptionFormActivity;
 import wada.programmics.thewada.Config.AppConfig;
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.ObjectClass.User;
 import wada.programmics.thewada.Preference.SessionManager;
 import wada.programmics.thewada.R;
@@ -92,7 +95,7 @@ public class FeedbackFullScreenDialog extends androidx.fragment.app.DialogFragme
             @Override
             public void onClick(View view) {
 
-                String name, email, messgae, number, city;
+                final String name, email, messgae, number, city;
                 name = etName.getText().toString();
                 email = etEmail.getText().toString();
                 messgae = etMsg.getText().toString();
@@ -159,7 +162,26 @@ public class FeedbackFullScreenDialog extends androidx.fragment.app.DialogFragme
 
                     progressBar.setVisibility(View.VISIBLE);
 
-                    insertFeedback(name,email,number,city,messgae);
+                    CheckInternet checkInternet = new CheckInternet(getActivity());
+
+                    if (checkInternet.isOnline()==true){
+                        insertFeedback(name,email,number,city,messgae);
+                    }
+                    else {
+
+                        new AlertDialog.Builder(getActivity())
+                                .setTitle("Alert")
+                                .setCancelable(false)
+                                .setMessage("No Network. Please check your internet connection")
+                                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        insertFeedback(name,email,number,city,messgae);
+                                    }
+                                }).create().show();
+
+                    }
+
+
 
                 }
 
@@ -200,7 +222,7 @@ public class FeedbackFullScreenDialog extends androidx.fragment.app.DialogFragme
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), "You have already joined", Toast.LENGTH_SHORT).show();
+                       Toast.makeText(getActivity(), "You have already joined", Toast.LENGTH_SHORT).show();
                     }
                 }){
 

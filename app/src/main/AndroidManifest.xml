@@ -45,9 +45,11 @@
             </intent-filter>
         </activity>
 
+
         <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_live_kWg0TaoJMTJsIU" />
+            android:value="@string/rkey" />
+
 
         <receiver android:name=".PushNotification.NotificationReceiver" />
 
@@ -57,5 +59,4 @@
             </intent-filter>
         </service>
     </application>
-
 </manifest>

@@ -214,8 +214,6 @@
                     android:layout_height="28dp"
                     app:ci_drawable="@drawable/indicatorbg"
                     android:layout_below="@+id/pager"
-
-
                     />
             </RelativeLayout>
 

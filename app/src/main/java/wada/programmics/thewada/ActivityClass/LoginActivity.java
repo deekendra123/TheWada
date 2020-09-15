@@ -37,6 +37,7 @@ import java.util.HashMap;
 import java.util.Map;
 import wada.programmics.thewada.Config.AppConfig;
 
+import wada.programmics.thewada.Config.CheckInternet;
 import wada.programmics.thewada.DialogFragment.OtpVerificationForgetPasswrodBottomSheet;
 
 import wada.programmics.thewada.ObjectClass.User;
@@ -113,7 +114,26 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 else {
-                    userLogin();
+
+                    CheckInternet checkInternet = new CheckInternet(getApplicationContext());
+
+                    if (checkInternet.isOnline()==true){
+                        userLogin();
+                    }
+                    else {
+
+                        new AlertDialog.Builder(LoginActivity.this)
+                                .setTitle("Alert")
+                                .setCancelable(false)
+                                .setMessage("No Network. Please check your internet connection")
+                                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        userLogin();
+                                    }
+                                }).create().show();
+
+                    }
+
                 }
 
             }
@@ -300,7 +320,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String number = etNumber.getText().toString();
+                final String number = etNumber.getText().toString();
 
                 if (etNumber.getText().toString().isEmpty()) {
                     etNumber.setError("Number is required");
@@ -317,8 +337,29 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 else {
-                    dialog.dismiss();
-                    sendOtp(number);
+                    CheckInternet checkInternet = new CheckInternet(getApplicationContext());
+
+                    if (checkInternet.isOnline()==true){
+                        dialog.dismiss();
+
+                        sendOtp(number);
+                    }
+                    else {
+
+                        new AlertDialog.Builder(LoginActivity.this)
+                                .setTitle("Alert")
+                                .setCancelable(false)
+                                .setMessage("No Network. Please check your internet connection")
+                                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        dialog.dismiss();
+
+                                        sendOtp(number);
+                                    }
+                                }).create().show();
+
+                    }
+
                 }
 
             }
@@ -375,7 +416,6 @@ public class LoginActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         progressBar.setVisibility(View.GONE);
 
-                        //  Toast.makeText(LoginActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                     }
                 }){
 
